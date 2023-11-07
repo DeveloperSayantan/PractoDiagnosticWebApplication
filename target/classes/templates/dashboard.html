@@ -40,7 +40,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white" id="showOrderDetails">
+            <a th:href="@{/orderDetails}" class="nav-link text-white" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                     <path d="M50.7 58.5L0 160H208V32H93.7C75.5 32 58.9 42.3 50.7 58.5zM240 160H448L397.3 58.5C389.1 42.3 372.5 32 354.3 32H240V160zm208 32H0V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192z"/></svg>
               &nbsp;Orders
@@ -112,32 +112,32 @@
 </main>
 
 <!--Orders -->
-<main class="form-signin w-auto m-auto " id="viewOrder" style="display: none;">
-<div class="container">
-	<table class="table">
+<!--
+ <main class="form-signin w-auto m-auto " id="viewOrder" style="display: none;">
+	 <a th:href="@{/orderDetails}"></a>
+	<table class="table" >
 	<H3>Test Details</H3>
-	<h6>Customer name: <span style="color: chocolate;" th:text="${session.user}"></span></h6>
+	<h6>Customer name: <span style="color: darkorange;" th:text="${session.user}"></span></h6>
 
   <thead>
     <tr>
-      <th scope="col">No.</th>
+	  <th scope="col">Cust Id</th>
       <th scope="col">Test Name</th>
       <th scope="col">Test Date</th>
-      <th scope="col">Prescription</th>
+     <th scope="col">Prescription</th> 
     </tr>
   </thead>
   <tbody>
-    <tr th:each ="booking : ${testBooking}">
-      <th scope="row">1</th>
-      <td th:text="${booking.test_name}"></td>
-      <td th:text="${booking.test_date}"></td>
-     <!--  <td th:text="${booking.file}"></td>
-     	<td><a th:href="@{/booking}"></a></td> -->
+    <tr th:each ="booking : ${testDetailsList}">
+	<td th:if="${booking.customer.id == session.userId}" th:text="${booking.customer.id}"></td>
+      <td th:if="${booking.customer.id == session.userId}" th:text="${booking.test_name}"></td>
+      <td th:if="${booking.customer.id == session.userId}" th:text="${booking.test_date}"></td>
+   	  <td th:if="${booking.customer.id == session.userId}" th:text="${booking.file}"></td>
     </tr>
   </tbody>
 </table>
-</div>
-</main>
+</main> 
+-->
 <!--Feedback-->
 <main class="form-signin w-auto m-auto " id="feedbackForm" style="display: none;">
   <form class="form-control border-success mb-2 px-4 py-4"th:action="@{/postFeedback}" 

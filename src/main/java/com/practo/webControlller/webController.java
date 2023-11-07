@@ -64,12 +64,14 @@ public class webController {
 		return "index";
 	}
 	
-//	@GetMapping("/login")
-//	public String login() {
-//		
-//		return "login";
-//	}
 
+    @GetMapping("/dashboard")
+    public String details(Model model) {
+    	//model.addAttribute("testDetailsList",testRepo.findAll());
+    	return "redirect:/dashboard";
+    }
+    
+   
 	
 ////////////////////////////////////Registration//////////////////////////////////////////////////////////////	
 	@GetMapping("/register")
@@ -145,55 +147,18 @@ public class webController {
     	
     	
     		testServiceImpl.addTest(name, date, file, customerEntity);
-    	
-//    	TestEntity upload = new TestEntity();
-//    	
-//    	upload.setFile(file.getOriginalFilename());
-//    	TestEntity uploadfile = testRepo.save(testEntity);
-//    	if(uploadfile != null ) {
-//    		
-//    		try {
-//    			
-//    			File saveFile = new ClassPathResource("static/testImg").getFile();
-//    			Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + file.getOriginalFilename());
-//    			
-//    			Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
-//    			
-//    			testRepo.save(testEntity);
-//				
-//			} catch (Exception e) {
-//
-//				e.printStackTrace();
-//			}
-//    		
-//    	}
+
     	session.setAttribute("msg", "Booking Successful!");
     	return "dashboard";
     	
 }
-//    @GetMapping("/booking")
-//    public String details(Model model) {
-//    	model.addAttribute("testDetailsList",testRepo.findAll());
-//    	return "booking";
-//    }
-    
-    @GetMapping("/dashboard")
-    public String getTestDetails(CustomerEntity user,Model model){
-    	
-    	String email = user.getEmail();
-    	CustomerEntity customer = customerRepo.findByEmail(email);
-    	
-    	if(customer != null) {
-    		
-    	List<TestEntity> testBooking = testRepo.findByCustomer(customer);
-    	
-    	System.out.println(testBooking);
-    	
-    	model.addAttribute("user",customer);
-    	model.addAttribute("testBooking", testBooking);
-    	}
-    	return "dashboard";
+ 
+    @GetMapping("/orderDetails")
+    public String orderDetails(Model model) {
+    	model.addAttribute("testDetailsList",testRepo.findAll());
+    	return "orderDetails";
     }
+
     
 ///////////////////////////////////////Creating Controllers for FeedBack///////////////////////////////////////////////// 
     @PostMapping("/postFeedback")

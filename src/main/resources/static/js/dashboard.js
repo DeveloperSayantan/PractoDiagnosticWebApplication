@@ -21,6 +21,7 @@ document.getElementById("showFeedbackLink").addEventListener("click", function(e
 document.getElementById("showOrderDetails").addEventListener("click", function(event) {
     event.preventDefault(); // Prevent the default link behavior
     var form = document.getElementById("viewOrder");
+    //window.location.href = "dashboard.html?session.userId";
     if (form.style.display === "none") {
         form.style.display = "block"; // Show the form
     } else {
