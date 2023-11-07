@@ -1,7 +1,11 @@
 # *PractoDiagnosticWebApplication*
 *A Full Stack Web Application for Placing Orders for Diagnostics Tests Through Doctor Prescription.*
 <br><br>
-<img src = "https://upload.wikimedia.org/wikipedia/commons/6/6a/Practo.png" width = "25%" align = "left"/>
+<p>
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/6/6a/Practo.png" width = "25%" align = "left"/>
+</p>
+<br><br><br><br>
+<br>
 
 ## Table of Contents
 
