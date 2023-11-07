@@ -76,7 +76,22 @@
 
 	
     <div class="form-floating pb-3">
-      <input type="text" name="test_name" class="form-control" id="floatingInput" placeholder="Test Name" required>
+      <input list="Test" name="test_name" class="form-control" id="floatingInput" placeholder="Test Name" required>
+      <datalist id="Test" >
+        <option value="Complete blood count(CBC)">
+        <option value="Lipid profile">
+        <option value="Thyroid function test">
+        <option value="Liver function test">
+        <option value="Kidney function test">
+		<option value="Blood glucose test">
+		<option value="Urine tests">
+		<option value="Allergy tests">
+		<option value="Imaging tests">
+		<option value="Echocardiogram">
+		<option value="Endoscopy">
+		<option value="CT scan">
+						
+    </datalist>
       <label for="floatingInput">Test Name</label>
     </div>
     <div class="form-floating pb-3">

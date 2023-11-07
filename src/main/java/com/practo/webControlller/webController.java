@@ -64,13 +64,14 @@ public class webController {
 		return "index";
 	}
 	
-	@GetMapping("/login")
-	public String login() {
-		
-		return "login";
-	}
+//	@GetMapping("/login")
+//	public String login() {
+//		
+//		return "login";
+//	}
+
 	
-	
+////////////////////////////////////Registration//////////////////////////////////////////////////////////////	
 	@GetMapping("/register")
 	public String dispalyForm(Model model) {
 
@@ -94,6 +95,18 @@ public class webController {
 		        return "redirect:/login";
     }
 	
+/////////////////////////////////////////////Login & Logout///////////////////////////////////////////////////////
+	
+    @GetMapping("/login")
+    public String yourPage(HttpSession session) {
+        String logoutMessage = (String) session.getAttribute("logoutMessage");
+        if (logoutMessage != null) {
+        	
+            session.removeAttribute("logoutMessage"); // Clear the attribute
+        }
+        return "login";
+    }
+	
 	@PostMapping("/loginCustomer")
 	public String login(@RequestParam String email,@RequestParam String password,HttpSession session,Model model) {
 		
@@ -105,7 +118,6 @@ public class webController {
 			
 			session.setAttribute("user", user.getName());
 			session.setAttribute("userId", user.getId());
-			model.addAttribute("user", user);
 			return "dashboard";
 		}
 			else {
@@ -118,6 +130,8 @@ public class webController {
 	}
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
+		
+	    session.setAttribute("logoutMessage", "Successfully Logout");
 	    session.invalidate();
 	    return "redirect:/login";
 	}
