@@ -169,7 +169,7 @@ public class webController {
         model.addAttribute("customerForm",new CustomerEntity());
        
         session.setAttribute("msg", "Feedback Submited !");
-        return "redirect:/dashboard";
+        return "dashboard";
 }
 
 }
