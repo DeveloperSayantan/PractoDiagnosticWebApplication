@@ -89,6 +89,7 @@ public class webController {
 		        System.out.println("Mobile: " + customerEntity.getMobile());
 		        System.out.println("City: " + customerEntity.getCity());
 		        System.out.println("Password: " + customerEntity.getPassword());
+		      
 		        
 		        customerRepo.save(customerEntity);
 		        model.addAttribute("customerForm",new CustomerEntity());

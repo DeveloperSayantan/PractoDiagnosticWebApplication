@@ -1,30 +1,55 @@
 document.getElementById("showFormLink").addEventListener("click", function(event) {
     event.preventDefault(); // Prevent the default link behavior
-    var form = document.getElementById("bookingForm");
-    if (form.style.display === "none") {
-        form.style.display = "block"; // Show the form
-    } else {
-        form.style.display = "none"; // Hide the form
+    var form1 = document.getElementById("bookingForm");
+    var form2 = document.getElementById("feedbackForm");
+    var form3 = document.getElementById("showHome");
+    
+    if (form1.style.display === "none") {
+        form1.style.display = "block"; // Show the form
+        form2.style.display = "none";
+        form3.style.display = "none";
     }
-});
+}); 
+
+
+
 
 document.getElementById("showFeedbackLink").addEventListener("click", function(event) {
     event.preventDefault(); // Prevent the default link behavior
-    var form = document.getElementById("feedbackForm");
-    if (form.style.display === "none") {
-        form.style.display = "block"; // Show the form
-    } else {
-        form.style.display = "none"; // Hide the form
+    var form1 = document.getElementById("bookingForm");
+    var form2 = document.getElementById("feedbackForm");
+    var form3 = document.getElementById("showHome");
+    
+    if (form2.style.display === "none") {
+        form2.style.display = "block"; // Show the form
+        form1.style.display = "none";
+        form3.style.display = "none";
     }
 });
 
-document.getElementById("showOrderDetails").addEventListener("click", function(event) {
+document.getElementById("showHomeDetails").addEventListener("click", function(event) {
     event.preventDefault(); // Prevent the default link behavior
-    var form = document.getElementById("viewOrder");
-    //window.location.href = "dashboard.html?session.userId";
-    if (form.style.display === "none") {
-        form.style.display = "block"; // Show the form
-    } else {
-        form.style.display = "none"; // Hide the form
+    var form1 = document.getElementById("bookingForm");
+    var form2 = document.getElementById("feedbackForm");
+    var form3 = document.getElementById("showHome");
+    
+    if (form3.style.display === "none") {
+        form3.style.display = "block"; // Show the form
+        form2.style.display = "none";
+        form1.style.display = "none";
     }
+});
+
+
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function (event) {
+    // Remove the 'active' class from all links
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // Add the 'active' class to the clicked link
+    this.classList.add('active');
+    console.log(this.classList);
+  });
 });
