@@ -24,10 +24,12 @@
           <div class="form-floating p-1">
             <input type="email" name="email"  class="form-control" id="floatingInput" placeholder="name@example.com" required>
             <label for="floatingInput">Email address</label>
+            <p style="color: orangered;" th:text="${errorEmail}"></p>
           </div>
           <div class="form-floating p-1">
             <input type="number" name="mobile"   class="form-control" id="floatingInput" placeholder="1234567890" required>
             <label for="floatingInput">Mobile</label>
+            <p style="color: orangered;" th:text="${errorMobile}"></p>
           </div>
           <div class="form-floating p-1">
             <input type="text" name="city"  class="form-control" id="floatingInput" placeholder="city" required>

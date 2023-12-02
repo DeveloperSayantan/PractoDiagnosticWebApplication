@@ -98,6 +98,18 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerRepo.findByEmail(email);
 	}
 
+	@Override	//isExist Email
+	public boolean isEmailExists(String email) {
+		// TODO Auto-generated method stub
+		return customerRepo.existsByEmail(email);
+	}
+
+	@Override	//isExist phone
+	public boolean isPhoneExists(Long mobile) {
+		// TODO Auto-generated method stub
+		return customerRepo.existsByMobile(mobile);
+	}
+
 
 	
 

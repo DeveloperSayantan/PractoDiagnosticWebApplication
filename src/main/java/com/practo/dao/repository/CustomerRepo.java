@@ -9,6 +9,9 @@ import com.practo.entity.CustomerEntity;
 public interface CustomerRepo extends JpaRepository <CustomerEntity, Integer> {
 	
 	 CustomerEntity findByEmail(String email);
-	 //CustomerEntity findByUserId(int id);
+	 
+	 boolean existsByEmail(String email);
+		
+	boolean existsByMobile(Long mobile);
 
 }

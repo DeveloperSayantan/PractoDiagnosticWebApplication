@@ -1,3 +1,4 @@
+
 document.getElementById("showFormLink").addEventListener("click", function(event) {
     event.preventDefault(); // Prevent the default link behavior
     var form1 = document.getElementById("bookingForm");
@@ -44,7 +45,7 @@ document.getElementById("showHomeDetails").addEventListener("click", function(ev
 const navLinks = document.querySelectorAll('.nav-link');
 
 navLinks.forEach(link => {
-  link.addEventListener('click', function (event) {
+link.addEventListener('click', function (event) {
     // Remove the 'active' class from all links
     navLinks.forEach(link => link.classList.remove('active'));
 

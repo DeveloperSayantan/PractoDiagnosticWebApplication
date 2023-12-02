@@ -89,7 +89,22 @@ public class webController {
 		        System.out.println("Mobile: " + customerEntity.getMobile());
 		        System.out.println("City: " + customerEntity.getCity());
 		        System.out.println("Password: " + customerEntity.getPassword());
-		      
+		        
+		        
+		        
+		        if(customerServiceImpl.isEmailExists(customerEntity.getEmail())) {
+		        	
+		        	model.addAttribute("errorEmail", "Email already exists!");
+			           
+		            return "register";
+		        }
+		        
+		        if(customerServiceImpl.isPhoneExists(customerEntity.getMobile())) {
+		        	
+		        	model.addAttribute("errorMobile", "Mobile No. already exists!");
+			           
+		            return "register";
+		        }
 		        
 		        customerRepo.save(customerEntity);
 		        model.addAttribute("customerForm",new CustomerEntity());
