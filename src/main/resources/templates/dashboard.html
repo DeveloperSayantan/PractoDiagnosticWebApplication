@@ -130,7 +130,7 @@
       <label for="floatingDate">Test Date</label>
     </div>
     <div class="form-floating pb-3">
-      <input type="file" name="file" class="form-control" id="floatingPUpload" accept="image/*" placeholder="Upload Prescription">
+      <input type="file" name="file" class="form-control" id="floatingPUpload" accept="image/*" placeholder="Upload Prescription" required>
       <label for="floatingUpload">Upload Prescription</label>
     </div>
     <div class="form-floating pb-3">
@@ -179,15 +179,15 @@
 
 	
     <div class="form-floating pb-3">
-      <input type="text" name="msg" class="form-control" id="floatingMessage" placeholder="Feedback Message">
+      <input type="text" name="msg" class="form-control" id="floatingMessage" placeholder="Feedback Message" required>
       <label for="floatingMessage">Message</label>
     </div>
     <div class="form-floating pb-3">
-      <input type="number" name="rating" class="form-control" id="floatingRating" placeholder="Rating" min="1" max="5">
+      <input type="number" name="rating" class="form-control" id="floatingRating" placeholder="Rating" min="1" max="5" required>
       <label for="floatingRating">Rating</label>
     </div>
     <div class="form-floating pb-3">
-      <input type="hidden" name="customerEntity" th:value="${session.userId}" class="form-control" id="floatingInput">
+      <input type="hidden" name="customerEntity" th:value="${session.userId}" class="form-control" id="floatingInput" >
     </div>
 	
 	
